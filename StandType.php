@@ -11,8 +11,7 @@ class ShortDistance extends StandUser
   //親クラスと同じメソッド名
 
   
-  public function getStandType($c
-  haracter_name, $stand_name)
+  public function getStandType($character_name, $stand_name)
   {
     echo '<br>';
     echo '<br>';
