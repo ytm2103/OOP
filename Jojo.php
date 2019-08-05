@@ -1,89 +1,54 @@
 <?php
-// クラス
-// インスタンス化
-// プロパティ
-// メソッド
-// アクセス修飾子
-// - アクセスできる範囲を制限する
-// public, protected, private
-// public - どこからでもアクセス可能
-// protected - 子クラスからアクセス可能
-// private - 自分だけしかアクセスができない
+// 親クラスを作成する
+class StandUser{
+    public $character_name; 
+    public $stand_name;
+    
 
 // コンストラクタ
-// インスタンス化した時に自動で呼ばれるメソッド
-// 書き方 __construct
-
-// クラス === 設計図
-class StandUser
-{
-    // プロパティ
-    public $stand;
-    private $character;
-
-    // インスタンス化した時に自動で呼ばれるメソッド
-    public function __construct($character)
+    public function __construct($character_name, $stand_name)
     {
-        // $this === このクラスのインスタンス
-        // ポケモンクラスのインスタンスのnameプロパティに、変数$nameを代入
-        $this->character= $character;
+        $this->character_name = $character_name;
+        $this->stand_name= $stand_name;
+        
     }
 
-    // メソッド
-    // // public function attack()
-    // {
-    //     echo $stand;
-    //     echo '<br>';
-    // }
-
-    public function attack($stand)
+    // キャラ名を取得
+    public function getName()
     {
-        $this->stand = $stand;
-        echo $stand;
-        echo '<br>';
-    }
+        return $this->character_name;
+    }    
 
-    // // ゲッター getPropertyName, セッター setPropertyName
-    // // プロパティに直接アクセスされないように
-    // public function getName()
-    // {
-    //     return $this->character;
-    // }
+    // スタンド名を取得
+    public function getStandName()
+    {
+        return $this->stand_name;
+    }
 }
 
-// インスタンス化
-// $pokemonという変数にPokemonクラスのインスタンスを代入
-// new Class名()でインスタンス化
-$Jojo= new StandUser('DIO');
+$dio = new StandUser('DIO', 'ザ・ワールド!!');
+$jotaro = new StandUser('承太郎', 'スタープラチナ!!');
+$kakyouin = new StandUser('花京院', 'ハイエロファントグリーン!!');
 
-// インスタンス化すると、設計図にある、
-// プロパティとメソッドを使える
+$dioName = $dio->getName();
+$dioStand = $dio->getStandName();
 
-// インスタンス->プロパティ名 / プロパティにアクセス
-// プロパティの$は抜きます。
-// インスタンス->メソッド名() / メソッドにアクセス
-// -> アロー演算子 「の」
+$jotaroName = $jotaro->getName();
+$jotaroStand = $jotaro->getStandName();
 
-// ポケモンインスタンスのlevelに3を代入
-$Jojo->attack('ザ・ワールド!!');
+$kakyouinName = $kakyouin->getName();
+$kakyouinStand = $kakyouin->getStandName();
 
-echo $Jojo->stand;
+echo $dioName.'のスタンド名は'.$dioStand.'です';
 echo '<br>';
-// ポケモンインスタンスのattackメソッド
+echo '<br>';
+echo '<br>';
 
-
-// ポケモンインスタンスのnameにピカチュウを代入する
-// echo $character->getName();
-
-// インスタンスは何個でも作れます
-// $fushigidane = new Pokemon('フシギダネ');
-// $zenigame = new Pokemon('ゼニガメ');
-
-// echo $fushigidane->getName();
-// echo $zenigame->getName();
+echo $jotaroName.'のスタンド名は'.$jotaroStand.'です';
 
 echo '<br>';
 echo '<br>';
 echo '<br>';
-echo '<br>';
-echo '<br>';
+echo $kakyouinName.'のスタンド名は'.$kakyouinStand.'です';
+
+?>
