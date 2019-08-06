@@ -1,8 +1,8 @@
 <?php
 // 親クラスを作成する
 class StandUser{
-    public $character_name; 
-    public $stand_name;
+    private $character_name; 
+    private $stand_name;
     
 
 // コンストラクタ
